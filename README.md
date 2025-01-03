@@ -21,7 +21,8 @@ mt5.initialize()
 # get some account info
 account_info = mt5.account_info()
 
-if account_info: # not adding this check will display an errpr in IDE
+if account_info: 
+    # not adding this check will display an error in IDE since account_info is possibly None
     print(account_info.name)
 
 mt5.shutdown()
