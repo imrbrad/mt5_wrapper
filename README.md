@@ -11,12 +11,19 @@ MT5 Wrapper is a Python package that wraps around the MetaTrader5 library, addin
 
 
 ### Getting Started
-Here's a quick example of using mt5_wrapper:
-`import mt5_wrapper as mt5`
-`mt5.initialize()`
-`account_info = mt5.account_info()`
-`print(f"Balance: {account_info.balance}")`
-`mt5.shutdown()`
+Here's a quick example of using mt5_wrapper: \
+```
+import mt5_wrapper as mt5
+mt5.initialize()
+
+# get some account info
+account_info = mt5.account_info()
+
+if account_info: # not adding this check will display an errpr in IDE
+    print(account_info.name)
+
+mt5.shutdown()
+```
 
 ### Requirements
  - Python 3.10 or later
