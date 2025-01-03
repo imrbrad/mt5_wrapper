@@ -7,7 +7,9 @@ MT5 Wrapper is a Python package that wraps around the MetaTrader5 library, addin
  - **Enhanced Readability**: Makes working with the mt5 library easier and more error-free.
 
 ### Installation
-`pip install mt5-wrapper`
+```
+pip install mt5-wrapper
+```
 
 
 ### Getting Started
