@@ -15,5 +15,5 @@ dependencies = []                    # List dependencies here if needed
 requires-python = ">=3.10"            # Minimum Python version
 
 [project.urls]
-homepage = "https://example.com"     # Optional
-repository = "https://github.com/yourusername/simple_package"  # Optional
+homepage = "https://github.com/imrbrad/mt5_wrapper"     # Optional
+repository = "https://github.com/imrbrad/mt5_wrapper"  # Optional
