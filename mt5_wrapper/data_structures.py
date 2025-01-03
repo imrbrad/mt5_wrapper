@@ -264,6 +264,7 @@ class TradeRequest:
     position: int
     position_by: int
 
+
 @dataclass
 class OrderCheckResult:
     retcode: int
@@ -275,6 +276,7 @@ class OrderCheckResult:
     margin_level: float
     comment: str
     request: TradeRequest
+
 
 @dataclass
 class OrderSendResult:

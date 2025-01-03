@@ -13,7 +13,7 @@ def initialize(
     password: Optional[str] = None,
     server: Optional[str] = None,
     timeout: Optional[int] = None,
-    portable: bool = False
+    portable: bool = False,
 ) -> bool:
 
     args: Dict[str, Optional[int | str]] = {
@@ -139,6 +139,7 @@ def copy_ticks_from(
 ) -> Optional[NDArray[np.void]]:
     return mt5.copy_ticks_from(symbol, date_from, count, flags)  # type: ignore
 
+
 def copy_ticks_range(
     symbol: str,
     date_from: int | float | datetime,
@@ -147,8 +148,10 @@ def copy_ticks_range(
 ) -> Optional[NDArray[np.void]]:
     return mt5.copy_ticks_range(symbol, date_from, date_to, flags)  # type: ignore
 
+
 def orders_total() -> Optional[int]:
     return mt5.orders_total()  # type: ignore
+
 
 def orders_get(
     symbol: Optional[str] = None,
@@ -166,20 +169,34 @@ def orders_get(
 
     return mt5.orders_get(**filtered_args)  # type: ignore
 
-def order_calc_margin(action: int, symbol: str, volume: float, price: float) -> Optional[int]:
+
+def order_calc_margin(
+    action: int, symbol: str, volume: float, price: float
+) -> Optional[int]:
     return mt5.order_calc_margin(action, symbol, volume, price)  # type: ignore
 
-def order_calc_profit(action: int, symbol: str, volume: float, price_open: float, price_close: float) -> Optional[int]:
+
+def order_calc_profit(
+    action: int, symbol: str, volume: float, price_open: float, price_close: float
+) -> Optional[int]:
     return mt5.order_calc_profit(action, symbol, volume, price_open, price_close)  # type: ignore
 
-def order_check(request: Dict[str, Optional[str | int | float]]) -> Optional[OrderCheckResult]:
-    return mt5.order_check(request) # type: ignore
 
-def order_send(request: Dict[str, Optional[str | int | float]]) -> Optional[OrderSendResult]:
-    return mt5.order_send(request) # type: ignore
+def order_check(
+    request: Dict[str, Optional[str | int | float]]
+) -> Optional[OrderCheckResult]:
+    return mt5.order_check(request)  # type: ignore
+
+
+def order_send(
+    request: Dict[str, Optional[str | int | float]]
+) -> Optional[OrderSendResult]:
+    return mt5.order_send(request)  # type: ignore
+
 
 def positions_total() -> Optional[int]:
     return mt5.positions_total()  # type: ignore
+
 
 def positions_get(
     symbol: Optional[str] = None,
@@ -204,15 +221,15 @@ def history_orders_total(
 ) -> Optional[int]:
     return mt5.history_orders_total(date_from, date_to)  # type: ignore
 
+
 def history_orders_get(
     date_from: int | float | datetime,
     date_to: int | float | datetime,
     group: Optional[str] = None,
     ticket: Optional[int] = None,
     position: Optional[int] = None,
-
 ) -> Optional[Tuple[TradeOrder]]:
-    
+
     args: Dict[str, Optional[int | str]] = {
         "position": position,
         "group": group,
@@ -223,11 +240,13 @@ def history_orders_get(
 
     return mt5.history_orders_get(date_from, date_to, **filtered_args)  # type: ignore
 
+
 def history_deals_total(
     date_from: int | float | datetime,
     date_to: int | float | datetime,
 ) -> Optional[int]:
     return mt5.history_deals_total(date_from, date_to)  # type: ignore
+
 
 def history_deals_get(
     date_from: int | float | datetime,
@@ -235,9 +254,8 @@ def history_deals_get(
     group: Optional[str] = None,
     ticket: Optional[int] = None,
     position: Optional[int] = None,
-
 ) -> Optional[Tuple[TradeOrder]]:
-    
+
     args: Dict[str, Optional[int | str]] = {
         "position": position,
         "group": group,
