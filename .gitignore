@@ -3,3 +3,4 @@ venv
 __pycache__
 dist
 mt5_wrapper.egg-info
+.env
