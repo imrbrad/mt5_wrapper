@@ -254,7 +254,7 @@ def history_deals_get(
     group: Optional[str] = None,
     ticket: Optional[int] = None,
     position: Optional[int] = None,
-) -> Optional[Tuple[TradeOrder]]:
+) -> Optional[Tuple[TradeDeal]]:
 
     args: Dict[str, Optional[int | str]] = {
         "position": position,

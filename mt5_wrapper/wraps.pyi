@@ -97,6 +97,6 @@ def history_orders_get(date_from: int | float | datetime, date_to: int | float |
 def history_deals_total(date_from: int | float | datetime, date_to: int | float | datetime) -> Optional[int]:
     ...
 
-def history_deals_get(date_from: int | float | datetime, date_to: int | float | datetime, group: Optional[str] = ..., ticket: Optional[int] = ..., position: Optional[int] = ...) -> Optional[Tuple[TradeOrder]]:
+def history_deals_get(date_from: int | float | datetime, date_to: int | float | datetime, group: Optional[str] = ..., ticket: Optional[int] = ..., position: Optional[int] = ...) -> Optional[Tuple[TradeDeal]]:
     ...
 
