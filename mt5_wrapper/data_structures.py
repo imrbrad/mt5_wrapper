@@ -100,6 +100,7 @@ class AccountInfo(NamedTuple):
     server: str
     currency: str
     company: str
+    name: str
 
 
 class TerminalInfo(NamedTuple):
