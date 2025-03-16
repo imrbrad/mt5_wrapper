@@ -1,3 +1,5 @@
+# ruff: noqa: F405
+# ruff: noqa: F403
 import MetaTrader5 as mt5  # type: ignore
 from typing import Optional, Tuple, Dict, List
 from .data_structures import *
@@ -15,7 +17,6 @@ def initialize(
     timeout: Optional[int] = None,
     portable: bool = False,
 ) -> bool:
-
     args: Dict[str, Optional[int | str]] = {
         "path": path,
         "login": login,
@@ -36,7 +37,6 @@ def login(
     server: Optional[str] = None,
     timeout: Optional[int] = None,
 ) -> bool:
-
     args: Dict[str, Optional[int | str]] = {
         "login": login,
         "password": password,
@@ -78,7 +78,6 @@ def symbol_info(symbol: str) -> Optional[SymbolInfo]:
 
 
 def symbols_get(group: Optional[str] = None) -> Tuple[SymbolInfo]:
-
     args = {
         "group": group,
     }
@@ -93,7 +92,6 @@ def symbol_info_tick(symbol: str) -> Optional[Tick]:
 
 
 def symbol_select(symbol: str, enabled: Optional[bool] = None) -> bool:
-
     args: List[str | Optional[bool]] = [symbol, enabled]
 
     filtered_args = [arg for arg in args if arg is not None]
@@ -158,7 +156,6 @@ def orders_get(
     group: Optional[str] = None,
     ticket: Optional[int] = None,
 ) -> Optional[Tuple[TradeOrder]]:
-
     args: Dict[str, Optional[int | str]] = {
         "symbol": symbol,
         "group": group,
@@ -183,13 +180,13 @@ def order_calc_profit(
 
 
 def order_check(
-    request: Dict[str, Optional[str | int | float]]
+    request: Dict[str, Optional[str | int | float]],
 ) -> Optional[OrderCheckResult]:
     return mt5.order_check(request)  # type: ignore
 
 
 def order_send(
-    request: Dict[str, Optional[str | int | float]]
+    request: Dict[str, Optional[str | int | float]],
 ) -> Optional[OrderSendResult]:
     return mt5.order_send(request)  # type: ignore
 
@@ -203,7 +200,6 @@ def positions_get(
     group: Optional[str] = None,
     ticket: Optional[int] = None,
 ) -> Optional[Tuple[TradePosition]]:
-
     args: Dict[str, Optional[int | str]] = {
         "symbol": symbol,
         "group": group,
@@ -229,7 +225,6 @@ def history_orders_get(
     ticket: Optional[int] = None,
     position: Optional[int] = None,
 ) -> Optional[Tuple[TradeOrder]]:
-
     args: Dict[str, Optional[int | str]] = {
         "position": position,
         "group": group,
@@ -255,7 +250,6 @@ def history_deals_get(
     ticket: Optional[int] = None,
     position: Optional[int] = None,
 ) -> Optional[Tuple[TradeDeal]]:
-
     args: Dict[str, Optional[int | str]] = {
         "position": position,
         "group": group,

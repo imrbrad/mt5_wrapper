@@ -1,25 +1,13 @@
-[build-system]
-requires = ["setuptools", "wheel"]
-build-backend = "setuptools.build_meta"
-
 [project]
-name = "mt5_wrapper"              
-version = "1.0.7"                   
+name = "mt5-wrapper"
+version = "0.1.8"
 description = "A Python package that enhances the MetaTrader5 library by adding type annotations and IntelliSense support for better code readability, auto-complete, and improved developer experience."
-readme = "README.md"                 
-authors = [
-    { name = "Bradley Imara", email = "imarabradley33@gmail.com" }
-]
-license = { text = "MIT" }           
+readme = "README.md"
+requires-python = ">=3.13"
 dependencies = [
-    "MetaTrader5>=5.0.0"
+    "metatrader5>=5.0.4874",
 ]
-
-requires-python = ">=3.10"            
-
+license = { text = "MIT" }
 [project.urls]
 homepage = "https://github.com/imrbrad/mt5_wrapper"     
 repository = "https://github.com/imrbrad/mt5_wrapper"  
-
-[tool.setuptools.package-data]
-"mt5_wrapper" = ["*.pyi", "py.typed"]

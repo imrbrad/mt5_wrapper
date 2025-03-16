@@ -1,6 +1,12 @@
-.mypy_cache
-venv
-__pycache__
-dist
-mt5_wrapper.egg-info
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
 .env
